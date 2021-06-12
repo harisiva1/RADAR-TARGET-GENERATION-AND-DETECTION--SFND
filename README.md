@@ -1,7 +1,6 @@
 Radar Target Generation and Detection
 Project for Udacity's Sensor Fusion Engineer Nanodegree Program
 
-If you want to find more details, please check my blog: Radar target generation and detection-Hardware, Radar target generation and detection-Software
 
 Project Goal
 Configure the FMCW waveform based on the system requirements.
@@ -10,6 +9,9 @@ For the same simulation loop process the transmit and receive signal to determin
 Perform Range FFT on the received signal to determine the Range
 Towards the end, perform the CFAR processing on the output of 2nd FFT to display the target.
 Overview
+
+![OVERVIEW](https://user-images.githubusercontent.com/68550704/121783220-a7354900-cbad-11eb-897d-26a6b5b4e357.png)
+
 
  Radar Specifications 
 
@@ -53,6 +55,7 @@ slope = B/Tchirp;
 Then, we need simulate the signal propagation and move target scenario.
 
 
+![EQUATION](https://user-images.githubusercontent.com/68550704/121783229-b3b9a180-cbad-11eb-9024-fb31c3c56c69.png)
 
 %% Signal generation and Moving Target simulation
 % Running the radar scenario over the time. 
@@ -84,12 +87,8 @@ end
 Range measurement
 
 The 1st FFT output for the target located at 110 meters
-
 ![Range from first FFT](https://user-images.githubusercontent.com/68550704/121782935-625ce280-cbac-11eb-8330-a91dfe6263eb.jpg)
-
-
 Range and Doppler measurement
-
 2st FFT will generate a Range Doppler Map as seen in the image below and it will be given by variable ‘RDM’.
 
 ![Doppler FFT map](https://user-images.githubusercontent.com/68550704/121782941-67219680-cbac-11eb-832c-c5bfab24cd87.jpg)
@@ -99,7 +98,7 @@ Range and Doppler measurement
 
 The 2D CFAR is similar to 1D CFAR, but is implemented in both dimensions of the range doppler block. The 2D CA-CFAR implementation involves the training cells occupying the cells surrounding the cell under test with a guard grid in between to prevent the impact of a target signal on the noise estimate.
 
-
+![cfar](https://user-images.githubusercontent.com/68550704/121783244-cfbd4300-cbad-11eb-8255-4f505ff00969.png)
 
 Select the number of Training Cells and Guard Cells in both the dimensions and set offset of threshold
 
