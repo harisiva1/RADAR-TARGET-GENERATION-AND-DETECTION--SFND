@@ -1,5 +1,5 @@
 # Radar Target Generation and Detection
-Project for Udacity's Sensor Fusion Engineer Nanodegree Program
+Udacity Sensor Fusion Nanodegree Program
 
 
 # Project Goal
