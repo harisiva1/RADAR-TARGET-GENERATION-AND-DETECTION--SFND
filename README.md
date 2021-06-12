@@ -88,12 +88,14 @@ Range measurement
 
 The 1st FFT output for the target located at 110 meters
 
+![Range from first FFT](https://user-images.githubusercontent.com/68550704/121782935-625ce280-cbac-11eb-8330-a91dfe6263eb.jpg)
 
 
 Range and Doppler measurement
 
 2st FFT will generate a Range Doppler Map as seen in the image below and it will be given by variable ‘RDM’.
 
+![Doppler FFT map](https://user-images.githubusercontent.com/68550704/121782941-67219680-cbac-11eb-832c-c5bfab24cd87.jpg)
 
 
 CFAR implementation
@@ -164,6 +166,7 @@ end
 
 RDM(RDM~=0 & RDM~=1) = 0;
 The output of the 2D CFAR process，a peak and spread centered at 100m in range direction and -20 m/s in the doppler direction.
+![Final](https://user-images.githubusercontent.com/68550704/121782950-7274c200-cbac-11eb-9638-a6972f731c5e.jpg)
 
 
 
