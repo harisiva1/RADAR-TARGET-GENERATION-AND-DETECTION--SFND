@@ -11,17 +11,13 @@ Perform Range FFT on the received signal to determine the Range
 Towards the end, perform the CFAR processing on the output of 2nd FFT to display the target.
 Overview
 
+ Radar Specifications 
 
-Steps
-Radar specifications
+ Frequency of operation = 77GHz
+ Max Range = 200m
+ Range Resolution = 1 m
+ Max Velocity = 100 m/s
 
-%% Radar Specifications 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Frequency of operation = 77GHz
-% Max Range = 200m
-% Range Resolution = 1 m
-% Max Velocity = 100 m/s
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 rmax = 200;%M
@@ -29,14 +25,14 @@ rres = 1;
 Maxvel = 100;
 c = 3e8;
 
-%Operating carrier frequency of Radar 
+Operating carrier frequency of Radar 
 fc= 77e9;             %carrier freq
 Target specifications
 
-%% User Defined Range and Velocity of target
-% *%TODO* :
-% define the target's initial position and velocity. Note : Velocity
-% remains contant
+User Defined Range and Velocity of target
+*%TODO* :
+define the target's initial position and velocity. Note : Velocity
+remains contant
 IR = 110; %initial range
 IV = -20; %intial velocity
 FMCW Waveform Generation
@@ -46,9 +42,9 @@ In this project, we will designing a Radar based on the given system requirement
 Max Range and Range Resolution will be considered here for waveform design.
 
 % *%TODO* :
-%Design the FMCW waveform by giving the specs of each of its parameters.
-% Calculate the Bandwidth (B), Chirp Time (Tchirp) and Slope (slope) of the FMCW
-% chirp using the requirements above.
+Design the FMCW waveform by giving the specs of each of its parameters.
+Calculate the Bandwidth (B), Chirp Time (Tchirp) and Slope (slope) of the FMCW
+chirp using the requirements above.
 
 B = c/(2*rres);
 Tchirp = (5.5*2*rmax)/c
@@ -82,8 +78,9 @@ for i=1:length(t)
     %This is done by element wise matrix multiplication of Transmit and
     %Receiver Signal
     Mix(i) = Tx(i)* Rx(i);
-    
 end
+    
+
 Range measurement
 
 The 1st FFT output for the target located at 110 meters
@@ -98,7 +95,7 @@ Range and Doppler measurement
 ![Doppler FFT map](https://user-images.githubusercontent.com/68550704/121782941-67219680-cbac-11eb-832c-c5bfab24cd87.jpg)
 
 
-CFAR implementation
+%%CFAR implementation
 
 The 2D CFAR is similar to 1D CFAR, but is implemented in both dimensions of the range doppler block. The 2D CA-CFAR implementation involves the training cells occupying the cells surrounding the cell under test with a guard grid in between to prevent the impact of a target signal on the noise estimate.
 
