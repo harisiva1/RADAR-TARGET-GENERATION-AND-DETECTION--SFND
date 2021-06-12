@@ -1,0 +1,27 @@
+FMCW Waveform Design:
+	yes the slope is around  2e13.
+Simulation Loop:
+	Generated beat signal is well with in the intial position of target.
+	Target position = 110
+	Target velocity = -20
+
+Range FFT (1st FFT):
+	Yes its with in range.
+
+2D CFAR:
+	Yes it matches with the image showed in the lesson.
+
+
+Implementation steps for the 2D CFAR process:
+	a) I have chosen the training and Gaurd cells randomly at the intial stage.
+	b) Then implemented the sliding window concept with a for loop.ofcourse margin for edges are considered.
+	c) Later values in the training cells are summed.db2pow is taken in to account.
+	d) Averaged the summed values and converted it back to pow2db.
+	e) Added the offset to determine the threshold.
+	f) Finally CUT is checked against threshold and assigned 1 if its greater then threshold else 0.
+
+Selection of Training, Guard cells and offset:
+	I added more training cells in order to detect the target well.Moreover i changed offset.
+
+Steps taken to suppress the non-thresholded cells at the edges:
+	RDM(RDM~=0 & RDM~=1) = 0;
